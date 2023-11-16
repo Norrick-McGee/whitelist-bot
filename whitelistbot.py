@@ -11,19 +11,32 @@ def parse_message(message):
     else:
         return "pass"
 
-def whitelist(message):
+def whitelist(command):
     return "Attempting to Whitelist: {username}"
 
-def blacklist(message):
+def blacklist(command):
     return "Attempting to Blacklist: {username}"
 
-def do_nothing(message):
+def start_gamemaster(command):
+    return ''
+
+def stop_gamemaster(command):
+    return ''
+
+def do_nothing(command):
     return ''
 
 actions = {
             "whitelist": whitelist,
             "blacklist": blacklist,
-            "pass": do_nothing
+            "pass": do_nothing,
+            "start_gamemaster": start_gamemaster,
+            "stop_gamemaster": stop_gamemaster,
+            "check_gamemaster":do_nothing,
+            "check_whitelist":do_nothing,
+            "check_blacklist":do_nothing,
+            "unwhitelist":do_nothing,
+            "unblacklist":do_nothing,
         }
 
 
